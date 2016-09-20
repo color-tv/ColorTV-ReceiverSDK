@@ -36,7 +36,12 @@ Firstly, set your appId in [example file](https://github.com/color-tv/ColorTV-Re
  Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36 CrKey/1.19a.63621  
  ```
  ```html
- <!DOCTYPE html>
+<!-- In order to run this example in your browser, you need to change your user agent to fit connected-tv. -->
+<!-- For Chrome browser, we advise user-agent switcher plugin:  https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg -->
+<!-- Below is example user-agent that you should set in user-agent switcher -->
+<!-- Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36 CrKey/1.19a.63621  -->
+<!-- Also remember to disable AdBlock -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -50,18 +55,20 @@ Firstly, set your appId in [example file](https://github.com/color-tv/ColorTV-Re
      -->
 </div>
 <script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
-<script src="./colortv_sdk.js"></script>
 <script>
-    window.onload = function () {
-       /**
-       *  Obtain ColorTV instance from SDK
-       */
-        var colortv = window.ColorTVSDK.getInstance() 
+   /**
+   * When SDK will be fetched, it will emit 'ColorTVSDKReady' event. After that you can safely continue.
+   */
+    window.addEventListener('ColorTVSDKReady', function () {
+        /**
+         *  Obtain ColorTV instance from SDK
+         */
+        var colortv = window.ColorTVSDK.getInstance()
         var castManager = window.cast.receiver.CastReceiverManager.getInstance()
         /**
-        * In order for SDK to monitor available senders, you must call proper functions in castSDK callbacks.
-        * If you omit this section you will not be able to monetize.
-        */
+         * In order for SDK to monitor available senders, you must call proper functions in castSDK callbacks.
+         * If you omit this section you will not be able to monetize.
+         */
         castManager.onSenderConnected = (event)=> {
             colortv.onSenderConnected(event)
         }
@@ -75,35 +82,35 @@ Firstly, set your appId in [example file](https://github.com/color-tv/ColorTV-Re
             colortv.onShutdown(event)
         }
         /**
-        * We provide you a set of callbacks
-        */
-        colortv.onAdLoaded = function() {
-           console.log('Ad is loaded')
+         * We provide you a set of callbacks
+         */
+        colortv.onAdLoaded = function () {
+            console.log('Ad is loaded')
         }
-        
-         colortv.onAdNotLoaded = function() {
-         console.log('Ad is not loaded')
+
+        colortv.onAdNotLoaded = function () {
+            console.log('Ad is not loaded')
         }
-        
-         colortv.onAdExpired = function(placement) {
-         console.log(placement + 'ad expired')
+
+        colortv.onAdExpired = function (placement) {
+            console.log(placement + 'ad expired')
         }
-        
-         colortv.onSdkInitialized = function() {
-         console.log('SDK is ready to use')
+
+        colortv.onSdkInitialized = function () {
+            console.log('SDK is ready to use')
         }
-        
-         colortv.onUnsupportedAdType = function() {
-         console.log('Unsupported ad type')
+
+        colortv.onUnsupportedAdType = function () {
+            console.log('Unsupported ad type')
         }
-        
-         colortv.onConversionComplete = function() {
-         console.log('Conversion complete')
+
+        colortv.onConversionComplete = function () {
+            console.log('Conversion complete')
         }
         /**
-        * You must initialize the SDK first by specifying the appID.
-        * To create an appId you must generate it in our dashboard http://www.colortv.com/dashboard
-        */
+         * You must initialize the SDK first by specifying the appID.
+         * To create an appId you must generate it in our dashboard http://www.colortv.com/dashboard
+         */
         colortv.init({
             appId: 'INSERT_YOU_APPID_HERE'
         }).then(() => {
@@ -113,14 +120,14 @@ Firstly, set your appId in [example file](https://github.com/color-tv/ColorTV-Re
             castManager.start()
             /**
              * You must load the ad before showing it, in order to create the optimal user experience you should provide enough time
-             * to load the required assets. To choose a specific ad unit to show, call the loadAd with appropriate placement that is 
+             * to load the required assets. To choose a specific ad unit to show, call the loadAd with appropriate placement that is
              * configured in the dashboard. Ads have expiration time after being loaded (~10 minutes).
              */
             colortv.loadAd({
                 placement: ColorTVSDK.Placements.INTERSTITIAL
             }).then(() => {
                 /**
-                 * Call showAd function to show the ad after loading it.  
+                 * Call showAd function to show the ad after loading it.
                  * You must pass the placement parameter (created in the dashboard) and node HTML DOM element you want us to append to.
                  * It can be either a jQuery object or a Vanilla JS object.
                  */
@@ -138,8 +145,12 @@ Firstly, set your appId in [example file](https://github.com/color-tv/ColorTV-Re
         }).catch((error) => {
             console.error(error)
         })
-    }
+    })
 </script>
+/**
+* You have multiple ways to include our SDK. For this example, script needs to be here due to event listener that we need to setup.
+*/
+<script src="../colortv_sdk.js"></script>
 </body>
 </html>
  ```
