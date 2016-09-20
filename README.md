@@ -4,11 +4,13 @@ The ColorTV Receiver SDK is a JavaScript library for Custom Receiver Chromecast 
  
  <h2>Installation</h2>
  
- To get started you need to include the SDK in your project:
- ```html
- <!-- ColorTV Receiver SDK-->
- <script src="./colortv_sdk.js"></script>
- ```
+To install the stable version:
+```javascript
+npm install --save colortv-receiver-sdk 
+```
+This assumes you are using npm as your package manager.
+If you don't, you can get SDK from [here](http://www.google.pl).  
+
   <h2>Placements</h2>  
  
  All placements are available in the window.ColorTVSDK object :
@@ -25,7 +27,7 @@ You can run our example in your browser. In order to run this file, you need two
 * appId from [dashboard](http://www.colortv.com/dashboard)
 * User-Agent switcher for your browser
 
-Firstly, set your appId in example file. Secondly install user-aget switcher in your browser.
+Firstly, set your appId in [example file](https://github.com/color-tv/ColorTV-ReceiverSDK/blob/master/example/example.html). Secondly install user-aget switcher in your browser.
  For Chrome, we advise [user-agent switcher plugin](https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg ) 
  Remember to disable AdBlock.  
  
