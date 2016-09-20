@@ -9,8 +9,30 @@ The ColorTV Receiver SDK is a JavaScript library for Custom Receiver Chromecast 
  <!-- ColorTV Receiver SDK-->
  <script src="./colortv_sdk.js"></script>
  ```
- <h1>Demo Example</h1>
- Below you can find an example HTML file documenting how to run SDK:
+  <h2>Placements</h2>  
+ 
+ All placements are available in the window.ColorTVSDK object :
+<ul>
+ <li>VIDEO</li>
+ <li>INTERSTITIAL</li>
+ <li>FULL_SCREEN</li>
+ <li>APP_WALL</li>
+ <li>CONTENT</li>
+</ul>
+ <h1>Example</h1>
+ 
+You can run our example in your browser. In order to run this file, you need two things:
+* appId from [dashboard](http://www.colortv.com/dashboard)
+* User-Agent switcher for your browser
+
+Firstly, set your appId in example file. Secondly install user-aget switcher in your browser.
+ For Chrome, we advise [user-agent switcher plugin](https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg ) 
+ Remember to disable AdBlock.  
+ 
+ Below you can find example user-agent that should be set in user-agent switcher. 
+```useragent
+ Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36 CrKey/1.19a.63621  
+ ```
  ```html
  <!DOCTYPE html>
 <html lang="en">
@@ -171,13 +193,3 @@ The callback function takes the error object as the first parameter ( error-firs
   colortv.loadAd(params)
    
  ```
- <h2>Placements</h2>  
- 
- All placements are available in the window.ColorTVSDK object :
-<ul>
- <li>VIDEO</li>
- <li>INTERSTITIAL</li>
- <li>FULL_SCREEN</li>
- <li>APP_WALL</li>
- <li>CONTENT</li>
-</ul>
