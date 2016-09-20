@@ -2,7 +2,7 @@
   "name": "colortv-receiver-sdk",
   "version": "1.0.1",
   "description": "The ColorTV Receiver SDK is a JavaScript library for Custom Receiver Chromecast applications that enables developers to monetize their apps.",
-  "main": "colortv_sdk.min.js",
+  "main": "colortv_sdk.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/color-tv/ColorTV-ReceiverSDK.git"

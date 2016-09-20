@@ -17,9 +17,9 @@
      -->
 </div>
 <script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
-<script src="./../colortv_sdk.min.js"></script>
+<script src="../colortv_sdk.js"></script>
 <script>
-    window.onload = function () {
+    window.addEventListener('ColorTVSDKReady', function () {
         /**
          *  Obtain ColorTV instance from SDK
          */
@@ -105,7 +105,7 @@
         }).catch((error) => {
             console.error(error)
         })
-    }
+    })
 </script>
 </body>
 </html>
