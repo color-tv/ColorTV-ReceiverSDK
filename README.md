@@ -8,9 +8,6 @@ To install the stable version:
 ```javascript
 <script src="https://s3.amazonaws.com/colortv-sdk/chromecast/js/colortv_sdk.min.js"></script> 
 ```
-This assumes you are using npm as your package manager.
-If you don't, you can get SDK from [here](http://www.google.pl).  
-
   <h2>Placements</h2>  
  
  All placements are available in the window.ColorTVSDK object :
@@ -21,6 +18,7 @@ If you don't, you can get SDK from [here](http://www.google.pl).
  <li>APP_WALL</li>
  <li>CONTENT</li>
 </ul>
+
  <h1>Example</h1>
  
 You can run our example in your browser. In order to run this file, you need two things:
