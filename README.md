@@ -54,7 +54,6 @@ Firstly, set your appId in [example file](https://github.com/color-tv/ColorTV-Re
         It must be the first child of the body tag.
      -->
 </div>
-<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
 <script>
    /**
    * When SDK will be fetched, it will emit 'ColorTVSDKReady' event. After that you can safely continue.
@@ -150,7 +149,8 @@ Firstly, set your appId in [example file](https://github.com/color-tv/ColorTV-Re
 /**
 * You have multiple ways to include our SDK. For this example, script needs to be here due to event listener that we need to setup.
 */
-<script src="../colortv_sdk.js"></script>
+<script src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+<script src="https://s3.amazonaws.com/colortv-sdk/chromecast/js/colortv_sdk.min.js"></script>
 </body>
 </html>
  ```
