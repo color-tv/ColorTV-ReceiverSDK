@@ -6,7 +6,7 @@ The ColorTV Receiver SDK is a JavaScript library for Custom Receiver Chromecast 
  
 To install the stable version:
 ```javascript
-npm install --save colortv-receiver-sdk 
+<script src="https://s3.amazonaws.com/colortv-sdk/chromecast/js/colortv_sdk.min.js"></script> 
 ```
 This assumes you are using npm as your package manager.
 If you don't, you can get SDK from [here](http://www.google.pl).  
