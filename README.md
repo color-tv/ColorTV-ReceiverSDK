@@ -17,6 +17,25 @@ To install the stable version:
  <li>FULL_SCREEN</li>
  <li>APP_WALL</li>
  <li>CONTENT</li>
+ <li>APP_LAUNCH</li>
+ <li>APP_RESUME</li>
+ <li>APP_CLOSE</li>
+ <li>MAIN_MENU</li>
+ <li>PAUSE</li>
+ <li>STAGE_OPEN</li>
+ <li>STAGE_COMPLETE</li>
+ <li>STAGE_FAILED</li>
+ <li>LEVEL_UP</li>
+ <li>BETWEEN_LEVELS</li>
+ <li>STORE_OPEN</li>
+ <li>IN_APP_PURCHASE</li>
+ <li>ABANDON_IN_APP_PURCHASE</li>
+ <li>VIRTUAL_GOOD_PURCHASED</li>
+ <li>USER_HIGH_SCORE</li>
+ <li>OUT_OF_GOODS</li>
+ <li>OUT_OF_ENERGY</li>
+ <li>INSUFFICIENT_CURRENCY</li>
+ <li>FINISHED_TUTORIAL</li>
 </ul>
 
  <h1>Example</h1>
